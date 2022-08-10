@@ -36,7 +36,7 @@ function Register() {
       body: JSON.stringify({
 
         Email: email,
-        name: fname,
+        Fname: fname,
         Lname: lname,
         MobileNo: mb,
         Password: password,
@@ -163,12 +163,12 @@ function Register() {
                 <TextField
 
                   id="outlined-textarea"
-                  type='email'
-                  label="Email"
+                 
+                  label="Mobile"
                   defaultValue=""
                   style={{ padding: "0.5%", height: "5%", width: "100%" }}
 
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => setMb(e.target.value)}
 
                 />
                 

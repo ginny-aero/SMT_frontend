@@ -12,12 +12,12 @@ function App() {
       // <Login/>
     // </div>
     
-      <Register/>
+        <Register/>
       // <Price/>
 
   );
 }
 
 
-export default App;
+export default App;  
  
