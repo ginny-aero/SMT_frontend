@@ -1,14 +1,30 @@
+
+.Navb{
+    width: 100vw;
+    height: 40vh;
+    background-color: #4682B4;
+
+}
 .register-body{
     background-color: #4682B4;
     height: 100vh;
+    flex-wrap: wrap;
+    width: 100vw;
+
 }
 .reg-card{
-    height: 48vh;
-    width: 50vh;
+    height: 70vh;
+    width: 30vw;
     background-color:white;
     margin-top: 0.7vh;
     margin-bottom: 2vh;
+    margin-left: 60vw;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-left: 3%;
+    padding-right: 3%;
     
 }

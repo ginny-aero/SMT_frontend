@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect } from 'react'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import CloseButton from 'react-bootstrap/CloseButton';
-import axios from 'axios';
+
 import TextField from '@mui/material/TextField';
 // import ScrapedTendersdtlController from '../scrapedtendersdtlcontroller';
 // import UserController from '../usercontroller';
@@ -102,7 +102,7 @@ function Navbar() {
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({Email:{Email},Password:{Password}})
+            body: JSON.stringify({Email:Email,Password:Password})
         };
         // let result=await  fetch('http://localhost:5000/api/login',{
         //     method:'POST',
@@ -204,8 +204,8 @@ function Navbar() {
                                             fontStyle: "font-family: 'Helvetica', 'Arial', sans-serif", textDecoration: "underline",
                                             textDecorationColor: "blue"
                                         }}><b>Login to your account</b></div>
-                                            <div className='inpar'><TextField fullWidth label="Mobile No. or Email" id="Mobile No. or Email" onChange={(e) => setEmail(e.target.value)} /></div>
-                                            <div className='inpar'><TextField fullWidth label="Password" id="Password" onChange={(e) => setPassword(e.target.value)} /></div>
+                                            <div className='inpar'><TextField type='email'fullWidth label="Mobile No. or Email" id="Mobile No. or Email" onChange={(e) => setEmail(e.target.value)} /></div>
+                                            <div className='inpar'><TextField type='password' fullWidth label="Password" id="Password" onChange={(e) => setPassword(e.target.value)} /></div>
 
                                             <br></br>
 

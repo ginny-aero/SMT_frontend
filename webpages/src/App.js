@@ -11,7 +11,7 @@ function App() {
     // <div style={{backgroundColor:"whitesmoke",border:"1px solid black"}}>
       // <Login/>
     // </div>
-
+    
       <Register/>
       // <Price/>
 
