@@ -1,7 +1,7 @@
 
 .Navb{
     width: 100vw;
-    height: 40vh;
+    height: 30vh;
     background-color: #4682B4;
 
 }
@@ -11,9 +11,16 @@
     flex-wrap: wrap;
     width: 100vw;
 
+
+}
+.info-reg{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 .reg-card{
-    height: 70vh;
+    height: 80vh;
     width: 30vw;
     background-color:white;
     margin-top: 0.7vh;
@@ -24,7 +31,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding-left: 3%;
-    padding-right: 3%;
-    
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 5%;
 }
+/* .e1{
+    display: none;
+}
+.e2{
+    display: none;
+} */

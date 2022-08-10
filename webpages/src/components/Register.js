@@ -4,6 +4,8 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import "./Register.css"
+let errorPass="Password should be of minimum 8 charachters and should include 1 Uppercase letter,1 Lowercase letter and 1 special charachter"
+let passflag=false;
 function Register() {
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
@@ -14,7 +16,10 @@ function Register() {
 
 
 
-
+  let errore=(email)=>{
+    let re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    (re.test(email))?passflag=false:passflag=true
+  }
 
   async function f() {
 
@@ -24,6 +29,7 @@ function Register() {
 
     // // let item={Email,Password}
     // console.log(item);
+    
     const requestOptions = {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -48,7 +54,7 @@ function Register() {
     //     body:JSON.stringify(item)
 
     // }
-    let result = await fetch('http://localhost:5000/api/login', requestOptions)
+    let result = await fetch('http://localhost:5000/api/register', requestOptions)
 
     result = await result.json()
     console.log(result)
@@ -102,7 +108,7 @@ function Register() {
         
 
       </div>
-      <div className='register-body'>Register
+       <div className='register-body'>Register
         <div className='reg-card'>
           <div style={{ position: "absolute", marginTop: "2rem" }}>
             <div style={{ margin: "1vh", display: "flex" }} >
@@ -137,25 +143,38 @@ function Register() {
                 <TextField
 
                   id="outlined-textarea"
+                  type="email"
                   label="Email"
                   defaultValue=""
                   style={{ padding: "0.5%", width: "47%", height: "5%" }}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)
+                  
+                  
+                      
+                  }
+
+
 
                 />
+                
                 <Button variant="contained">Contained</Button>
               </div>
-              <div>
+              <div style={{ display:"flex",flexDirection:"column" }}>
                 <TextField
 
                   id="outlined-textarea"
-                  label="Mobile no."
+                  type='email'
+                  label="Email"
                   defaultValue=""
                   style={{ padding: "0.5%", height: "5%", width: "100%" }}
-                  onChange={(e) => setMb(e.target.value)}
+
+                  onChange={(e) => setPassword(e.target.value)}
+
                 />
+                
+                
               </div>
-              <div>
+              <div style={{ display:"flex",flexDirection:"column" }}>
                 <TextField
 
                   id="outlined-textarea"
@@ -164,8 +183,12 @@ function Register() {
                   defaultValue=""
                   style={{ padding: "0.5%", height: "5%", width: "100%" }}
 
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e) => {setPassword(e.target.value)
+                    errore()
+                  } }
+
                 />
+               
               </div>
               <div style={{ margin: "0.8vh", marginLeft: "1.7vh" }}>
                 <Button variant="outlined" style={{ width: "100%", paddingTop: "3%", marginTop: "5%" }} onClick={f}  >Register</Button>
@@ -175,7 +198,7 @@ function Register() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */
       <footer class="footer-bs">
         <div class="row">
           <div class="col-md-3 footer-brand animated fadeInLeft">
